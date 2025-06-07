@@ -71,7 +71,7 @@ public class GitHubService {
         try {
             return restTemplate.getForObject(url, GitHubUserInfoDto.class);
         } catch (HttpClientErrorException.NotFound e) {
-            throw new UserNotFoundException("Github user not found: " + username);
+            throw new UserNotFoundException("Github user " + username + " not found" );
         }
         catch (RestClientException e) {
             throw new RuntimeException(e);
