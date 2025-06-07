@@ -21,7 +21,7 @@ public class GitHubServiceTest {
 
     @Test
     public void testGetReposForUser() {
-        String username = "stefanandonov";
+        String username = "filip-postolov";
 
         List<RepositoryInfoDto> repos = gitHubService.getRepositoriesForUser(username);
 
