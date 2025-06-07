@@ -1,13 +1,13 @@
 package org.filippostolov.gitviewer.dto;
 
-import org.springframework.web.client.RestTemplate;
+import java.time.OffsetDateTime;
 
-public class RepositoryInfoDto {
-    private String name;
-    private String description;
-    private String createdAt;
-    private String lastUpdated;
-    private int commitCount;
-    private String lastCommitMessage;
-    private String lastCommitDate;
-}
+
+public record RepositoryInfoDto (
+     String name,
+     String htmlUrl,
+     OffsetDateTime createdAt,
+     OffsetDateTime updatedAt,
+     Integer watchers,
+     Boolean fork
+) {}
