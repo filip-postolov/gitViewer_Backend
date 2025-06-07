@@ -9,5 +9,6 @@ public record RepositoryInfoDto (
      OffsetDateTime createdAt,
      OffsetDateTime updatedAt,
      Integer watchers,
-     Boolean fork
+     Boolean fork,
+     String language
 ) {}

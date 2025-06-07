@@ -47,6 +47,9 @@ public class GitHubServiceTest {
             assertNotNull(repo.fork(), "isFork should not be null");
             System.out.println("  is Fork: " + repo.fork());
 
+            assertNotNull(repo.fork(), "Language should not be null");
+            System.out.println("  Language: " + repo.language());
+
             System.out.println("-------------------------");
         });
 

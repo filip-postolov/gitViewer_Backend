@@ -20,5 +20,8 @@ public record GitHubRepoDto(
     Integer watchers,
 
     @JsonProperty("fork")
-    Boolean fork
+    Boolean fork,
+
+    @JsonProperty("language")
+    String language
 ) {}
