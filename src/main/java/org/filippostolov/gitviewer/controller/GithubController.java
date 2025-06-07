@@ -1,7 +1,8 @@
 package org.filippostolov.gitviewer.controller;
 
 import lombok.AllArgsConstructor;
-import org.filippostolov.gitviewer.model.GitHubRepositories;
+import org.filippostolov.gitviewer.dto.GitHubUserInfoDto;
+import org.filippostolov.gitviewer.dto.RepositoryInfoDto;
 import org.filippostolov.gitviewer.service.GitHubService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +19,17 @@ public class GithubController {
     private final GitHubService gitHubService;
 
     @GetMapping("/{username}")
-    public ResponseEntity<List<GitHubRepositories>> getRepositories(@PathVariable String username) {
+    public ResponseEntity<List<RepositoryInfoDto>> getRepositories(@PathVariable String username) {
         try {
-            List<GitHubRepositories> repos = gitHubService.getRepositoriesForUser(username);
+            List<RepositoryInfoDto> repos = gitHubService.getRepositoriesForUser(username);
             return ResponseEntity.ok(repos);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/users/{username}")
+    public GitHubUserInfoDto getUserInfo(@PathVariable String username) {
+        return gitHubService.getUserProfile(username);
     }
 }
