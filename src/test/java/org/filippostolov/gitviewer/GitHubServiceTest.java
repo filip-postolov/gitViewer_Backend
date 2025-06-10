@@ -23,7 +23,7 @@ public class GitHubServiceTest {
     public void testGetReposForUser() {
         String username = "filip-postolov";
 
-        List<RepositoryInfoDto> repos = gitHubService.getRepositoriesForUser(username);
+        List<RepositoryInfoDto> repos = gitHubService.getRepositoriesForUser(username, "");
 
         assertNotNull(repos, "Repository list should not be null");
         assertFalse(repos.isEmpty(), "Repository list should not be empty");

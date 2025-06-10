@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface GitHubService {
 
-    List<RepositoryInfoDto> getRepositoriesForUser(String username);
+    List<RepositoryInfoDto> getRepositoriesForUser(String username, String sortParam);
 
     GitHubUserInfoDto getUserProfile(String username);
 
